@@ -4,6 +4,10 @@ Lingó Hack 2020 Landing Page
 
 <img src="https://user-images.githubusercontent.com/9976294/68967448-5598c280-07ae-11ea-831b-0f5c7a7d1d8f.png" alt="Screenshot" align="center"/>
 
+<h2 align="center">
+<a href="https://lingo-hack-2020.herokuapp.com/">> Website <</a>
+</h2>
+
 ## Table of Contents
 <!-- ⛔️ MD-MAGIC-EXAMPLE:START (TOC:collapse=true&collapseText=Click to expand) -->
 <details>
@@ -21,9 +25,6 @@ Lingó Hack 2020 Landing Page
 
 ## 1 Introduction
 This is the official code used for Lingó Hack Landing Page.
-Link to official website:
-[lingo-hack-2020.herokuapp.com](lingo-hack-2020.herokuapp.com)
-
 
 ## 2 Setup
 
