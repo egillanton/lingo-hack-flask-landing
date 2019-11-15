@@ -1,2 +1,101 @@
-# lingo-hack-flask-landing
- Lingó Hack 2020 Landing Page
+<h1 align="center">
+Lingó Hack 2020 Landing Page
+</h1>
+
+<img src="https://user-images.githubusercontent.com/9976294/68967448-5598c280-07ae-11ea-831b-0f5c7a7d1d8f.png" alt="Screenshot" align="center"/>
+
+## Table of Contents
+<!-- ⛔️ MD-MAGIC-EXAMPLE:START (TOC:collapse=true&collapseText=Click to expand) -->
+<details>
+<summary>Click to expand</summary>
+
+1. [Introduction](#1-introduction)
+2. [Setup](#2-setup)
+3. [Collaborators](#3-collaborators)
+4. [License](#4-license)
+5. [References](#5-references)
+
+</details>
+<!-- ⛔️ MD-MAGIC-EXAMPLE:END -->
+
+
+## 1 Introduction
+This is the official code used for Lingó Hack Landing Page.
+Link to official website:
+[lingo-hack-2020.herokuapp.com](lingo-hack-2020.herokuapp.com)
+
+
+## 2 Setup
+
+Make sure to have Python 3.6 or newer, and pip installed.
+
+### 2.1 Get virtualenv
+
+```bash
+$ pip install virtualenv
+```
+
+### 2.2 Create a virtual enviroment
+
+Make sure to create a Python3 instead of Python2 enviroment by refrencing its binaries.
+```bash
+$ which python3
+/usr/bin/python3
+```
+
+You can use any name you want, we will use "venv".
+```bash
+$ virtualenv -p /usr/bin/python3  venv
+```
+
+### 2.3 Activate enviroment
+
+```bash
+$ . venv/bin/activate
+```
+
+Now you have activated your virual enviroment and your teminal should display its name as so:
+```bash
+$(venv)
+```
+
+### 2.4 Install requried packages
+```bash
+$(venv) pip3 install -r requirements.txt  
+```
+
+### 2.5 Run The Application
+
+```bash
+$(venv) flask run
+```
+
+You’ll see output similar to this:
+
+```bash
+Serving Flask app "app"
+Environment: development
+Debug mode: on
+Running on http://127.0.0.1:5000/
+Restarting with stat
+Debugger is active!
+Debugger PIN: 298-204-950
+```
+
+Open the link in your browser.
+
+## 3 Collaborators
+* [Egill Anton Hlöðversson](https://github.com/egillanton) - MSc. Language Technology Student
+
+## 4 License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 5 References
+- [Flask 1.1.1](http://flask.pocoo.org/) - A microframework for Python web applications
+- [Bootstrap 3.3.1](https://getbootstrap.com/) - An open source design system for HTML, CSS, and JS.
+- [Jinja2 2.10.3](http://jinja.pocoo.org/docs/2.10/) - A templating language for Python, used by Flask.
+
+
+<p align="center">
+🌟 PLEASE STAR THIS REPO IF YOU FOUND SOMETHING INTERESTING 🌟
+</p>
