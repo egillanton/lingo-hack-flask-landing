@@ -84,6 +84,36 @@ Debugger PIN: 298-204-950
 
 Open the link in your browser.
 
+### 2.6 Push to Heroku
+Make sure you have installed Heroku CLI, and have authentication to the Heroku project.
+
+Install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-command-line)
+Download and install the Heroku CLI.
+
+If you haven't already, log in to your Heroku account and follow the prompts to create a new SSH public key.
+**Login into Heroku**
+```bash
+$ heroku login
+```
+
+**Clone the repository**
+Use Git to clone lingo-hack-2020's source code to your local machine.
+
+
+```bash
+$ heroku git:clone -a lingo-hack-2020
+$ cd lingo-hack-2020
+```
+
+**Deploy your changes**
+Make some changes to the code you just cloned and deploy them to Heroku using Git.
+
+```bash
+$ git add .
+$ git commit -am "make it better"
+$ git push heroku master
+```
+
 ## 3 Collaborators
 * [Egill Anton Hlöðversson](https://github.com/egillanton) - MSc. Language Technology Student
 
