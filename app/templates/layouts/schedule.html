@@ -1,0 +1,133 @@
+{% extends "base.html" %}
+
+{% block title %}
+Event Schedule - {{ super() }}
+{% endblock %}
+
+{% block navbar %}
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Lingó Hack 2020</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/challenges">Challenges</a></li>
+                <li><a href="/sponsors_partners">Sponsors & Partners</a></li>
+                <li class="active"><a href="/schedule">Event Schedule</a></li>
+                <li><a href="/faq">FAQ</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+{% endblock %}
+
+{% block content %}
+<!-- app/templates/layouts/schedule.html -->
+<div class="container">
+    <div class="row">
+        <div class="col-10 offset-1">
+            <h2>Event Schedule</h2>
+        </div>
+        <div class="w-100"></div>
+        <div class="col-12 offset-0 col-sm-11 offset-sm-1 col-md-6 offset-md-1">
+            <table class="table table-borderless table-responsize tealTime">
+                <tbody>
+                    <tr>
+                        <th></th>
+                        <th>Saturday, April 25<sup>th</sup></th>
+                    </tr>
+                    <tr>
+                        <td>08:00 AM</td>
+                        <td>Check in</td>
+                    </tr>
+                    <tr>
+                        <td>09:45 AM</td>
+                        <td>Opening Ceremony</td>
+                    </tr>
+                    <tr>
+                        <td>11:30 AM</td>
+                        <td>Team Formation, People Bingo</td>
+                    </tr>
+                    <tr>
+                        <td>12:00 PM</td>
+                        <td>Hacking Starts</td>
+                    </tr>
+                    <tr>
+                        <td>12:30 PM</td>
+                        <td>Lunch</td>
+                    </tr>
+                    <tr>
+                        <td>15:00 PM</td>
+                        <td>Workshop 1</td>
+                    </tr>
+                    <tr>
+                        <td>6:30 PM</td>
+                        <td>Dinner</td>
+                    </tr>
+                    <tr>
+                        <td>6:30 PM</td>
+                        <td>MLH Hosted Mini-Event</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-12 offset-0 col-sm-11 offset-sm-1 col-md-5 offset-md-0">
+            <table class="table table-borderless table-responsize blueTime">
+                <tbody>
+                    <tr>
+                        <th></th>
+                        <th>Sunday, April 26<sup>th</sup></th>
+                    </tr>
+                    <tr>
+                        <td>12:00 AM</td>
+                        <td>Midnight Pizza</td>
+                    </tr>
+                    <tr>
+                        <td>8:00 AM</td>
+                        <td>Breakfast</td>
+                    </tr>
+                    <tr>
+                        <td>9:00 AM</td>
+                        <td>Workshop 2</td>
+                    </tr>
+                    </tr>
+                    <tr>
+                        <td>11:00 AM</td>
+                        <td>Judge Training</td>
+                    </tr>
+                    </tr>
+                    <tr>
+                        <td>11:45 AM</td>
+                        <td>Submissions Due/HACKING ENDS</td>
+                    </tr>
+                    <tr>
+                        <td>12:00 PM</td>
+                        <td>Lunch</td>
+                    </tr>
+                    <tr>
+                        <td>13:00 PM</td>
+                        <td>Judging Begins</td>
+                    </tr>
+                    <tr>
+                        <td>14:30 PM</td>
+                        <td>Awards and Closing Ceremony</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}

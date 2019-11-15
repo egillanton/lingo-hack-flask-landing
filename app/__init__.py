@@ -24,6 +24,11 @@ def create_app(test_config=None):
     def sponsors_partners():
         return render_template('layouts/sponsors_partners.html')
 
+    # -------- EVENT SCHEDULE ----------------- #
+    @app.route('/schedule', methods=['GET'])
+    def schedule():
+        return render_template('layouts/schedule.html')
+
     # -------- FAQ --------------------------------- #
     @app.route('/faq', methods=['GET'])
     def faq():
