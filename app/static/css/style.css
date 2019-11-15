@@ -50,11 +50,6 @@ body > .container {
 }
 
 
-.img-fluid {
-    width:100%;
-    height: auto;
-}
-
-.sponsors{
-    vertical-align: middle;
+.sponsor_modal{
+    margin-bottom: 40px;
 }
