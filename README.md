@@ -123,7 +123,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 5 References
 - [Flask 1.1.1](http://flask.pocoo.org/) - A microframework for Python web applications
-- [Bootstrap 3.3.1](https://getbootstrap.com/) - An open source design system for HTML, CSS, and JS.
+- [Bootstrap 4](https://getbootstrap.com/) - An open source design system for HTML, CSS, and JS.
 - [Jinja2 2.10.3](http://jinja.pocoo.org/docs/2.10/) - A templating language for Python, used by Flask.
 
 
