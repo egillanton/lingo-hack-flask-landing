@@ -1,22 +1,29 @@
-/* Sticky footer styles
--------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
 html {
     position: relative;
     min-height: 100%;
 }
 
 body {
-    /* Margin bottom by footer height */
-    margin-bottom: 60px;
+    font-family: 'Montserrat', sans-serif;
+    background-image: url("https://user-images.githubusercontent.com/9976294/68985129-459ad600-07e2-11ea-9923-e958a92ed203.png");
+    background-repeat: no-repeat;
+    background-size: cover; 
 }
 
 .footer {
     position: absolute;
     bottom: 0;
     width: 100%;
-    /* Set the fixed height of the footer here */
-    height: 60px;
+    /* Hide Footer until scroll down*/
+    height: 0;
     background-color: #f5f5f5;
+    border-top: solid 1px #ddd;
+}
+
+nav{
+    border-bottom: solid 1px #ddd;
 }
 
 body > .container {
@@ -32,17 +39,28 @@ body > .container {
 }
 
 
-#home_container {
+.main_container {
+    background-color: #f5f5f5;
     text-align:center;
-    padding-top: 25%;
+    margin-top: 25%;
+    padding: 10px;
     font-weight: 700;
     font-size: 5em;
+    border:1px solid #ddd;
+
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.main_container > h1{
+    font-size: 1em;
+    font-weight: bold;
 }
 
 #clock {
     font-size: 0.5em;
-    border:1px solid black;
-
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     -khtml-border-radius: 5px;
@@ -52,4 +70,14 @@ body > .container {
 
 .sponsor_modal{
     margin-bottom: 40px;
+}
+
+.light_bckgr{
+    background-color: #f5f5f5;
+    border:1px solid #ddd;
+
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    border-radius: 5px;
 }
