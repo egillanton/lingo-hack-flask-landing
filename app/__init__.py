@@ -13,25 +13,5 @@ def create_app(test_config=None):
     @app.route('/', methods=['GET'])
     def index():
         return render_template('layouts/index.html')
-    
-    # -------- CHALLENGES -------------------------- #
-    @app.route('/challenges', methods=['GET'])
-    def challenges():
-        return render_template('layouts/challenges.html')
-
-    # -------- SPONSORS & PARTNERS ----------------- #
-    @app.route('/sponsors_partners', methods=['GET'])
-    def sponsors_partners():
-        return render_template('layouts/sponsors_partners.html')
-
-    # -------- EVENT SCHEDULE ----------------- #
-    @app.route('/schedule', methods=['GET'])
-    def schedule():
-        return render_template('layouts/schedule.html')
-
-    # -------- FAQ --------------------------------- #
-    @app.route('/faq', methods=['GET'])
-    def faq():
-        return render_template('layouts/faq.html')
 
     return app

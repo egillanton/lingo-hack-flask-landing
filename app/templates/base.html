@@ -1,10 +1,5 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="no-js" lang="eng">
-<!--<![endif]-->
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -12,74 +7,90 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Language Technology Hackathon">
     <meta name="author" content="Reykjavik University">
+
+    <!-- Custom Fonts -->
+    <link href="{{ url_for('static', filename='css/vendor/fontawesome-free/css/all.min.css') }} " rel="stylesheet"
+        type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
+        type="text/css">
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- Material Design CDN -->
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+
+    <!-- Material Design Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel='shortcut icon' type='image/x-icon' href="{{ url_for('static', filename='favicon.ico') }}" />
     <title>{% block title %}Lingó Hack 2020{% endblock %}</title>
 </head>
 
-<body>
-    <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+<body id="page-top">
 
-    <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <div class="navbar-nav text-left pl-3">
-                <a class="nav-item nav-link" href="/">Home</a>
-                <a class="nav-item nav-link" href="/challenges">Challenges</a>
-                <a class="nav-item nav-link" href="/sponsors_partners">Sponsors & Partners</a>
-                <a class="nav-item nav-link" href="/schedule">Event Schedule</a>
-                <a class="nav-item nav-link" href="/faq">FAQ</a>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-xl bg-secondary text-uppercase fixed-top" id="mainNav">
+        <div class="container ">
+            <a class="navbar-brand js-scroll-trigger" href="#page-top">Lingó Hack 2020</a>
+            <button
+                class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded"
+                type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item mx-0 mx-lg-1">
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                            href="#challenges">Challenges</a>
+                    </li>
+                    <li class="nav-item mx-0 mx-lg-1">
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                            href="#sponsors_partners">Sponsors &
+                            Partners</a>
+                    </li>
+                    <li class="nav-item mx-0 mx-lg-1">
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#schedule">Schedule</a>
+                    </li>
+                    <li class="nav-item mx-0 mx-lg-1">
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#faq">FAQ</a>
+                    </li>
+                    <li class="nav-item mx-0 mx-lg-1">
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Contact Us</a>
+                    </li>
+                    <li class="nav-item mx-0 mx-lg-1 border rounded-lg">
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                            href="https://forms.gle/RxFfVRXqVaMFE7np6">
+                            <i class="fas fa-pencil-alt mr-2"></i> Sign Up
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>
 
-
-    <!-- CONTENT -->
     {% block content %}
     {% endblock %}
 
-    <!-- FOOTER -->
-    <footer class="footer bg-light ">
-        <div class="container-fluid bg-light py-3">
-            <div class="row text-center">
-                <div class="col-12">
-                    <p><a target="_blank" href="mailto:lingohack@ru.is">
-                            lingohack@ru.is</a></p>
-                    <p><a target="_blank" href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf">
-                            MLH Code of Conduct</a></p>
-                    <p>Copyright © 2020 Lingó Hack, All rights reserved.</p>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-
     <!-- SCRIPS -->
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script src="{{ url_for('static', filename='js/vendor/jquery/jquery.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="{{ url_for('static', filename='js/vendor/jquery-easing/jquery.easing.min.js')}}"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="{{ url_for('static', filename='js/script.js')}}"></script>
+
     {% block scripts %}
     {% endblock %}
 
     <!-- 2020 HACKATHON SEASON MEMBER EVENT BADGE  -->
-    <a id="mlh-trust-badge"
+    <a id="mlh-trust-badge" class="d-none d-xl-block"
         style="display:block;max-width:100px;min-width:60px;position:fixed;right:50px;top:0;width:10%;z-index:10000"
         href="https://mlh.io/seasons/eu-2020/events?utm_source=eu-hackathon&utm_medium=TrustBadge&utm_campaign=2020-season&utm_content=blue"
         target="_blank"><img src="https://s3.amazonaws.com/logged-assets/trust-badge/2020/mlh-trust-badge-2020-blue.svg"
