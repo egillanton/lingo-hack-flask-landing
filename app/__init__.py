@@ -54,8 +54,13 @@ def create_app(test_config=None):
     # ======== Routing ============================= #
     # -------- Home -------------------------------- #
     @app.route('/', methods=['GET'])
+    @app.route('/eng', methods=['GET'])
     def index():
         return render_template('layouts/index.html')
+
+    @app.route('/isl', methods=['GET'])
+    def isl():
+        return render_template('layouts/index_isl.html')
 
     # -------- EMAIL -------------------------------- #
     @app.route('/email', methods=['POST'])
