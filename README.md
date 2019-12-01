@@ -2,7 +2,7 @@
 Lingó Hack 2020 Landing Page
 </h1>
 
-<img src="https://user-images.githubusercontent.com/9976294/68986366-b1823c00-07ec-11ea-87d7-e7b7ce6270d5.png" alt="Screenshot" align="center"/>
+<img src="https://user-images.githubusercontent.com/9976294/69907423-585dff00-13cd-11ea-80b8-7d7dc5c8e0e8.png" alt="Screenshot" align="center"/>
 
 <h2 align="center">
 <a href="https://lingo-hack-2020.herokuapp.com/">> Website <</a>
