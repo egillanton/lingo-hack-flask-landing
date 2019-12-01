@@ -10,14 +10,14 @@ RECEPIENT_EMAILS = ["egilla14@ru.is", "egillanton@live.com"]
 BODY = "You have received a new message from your website contact form.\n\nHere are the details:\n\nName: {}\n\nEmail: {}\n\nPhone: {}\n\nMessage:\n{}"
 HEADER = "From: noreply@ru.is\nReply-To: {}"
 
-mail_settings = {
-    "MAIL_SERVER": ' smtp.office365.com',
-    "MAIL_PORT": 587,
-    "MAIL_USE_TLS": False,
-    "MAIL_USE_SSL": True,
-    "MAIL_USERNAME": os.environ['EMAIL_USER'],
-    "MAIL_PASSWORD": os.environ['EMAIL_PASSWORD']
-}
+# mail_settings = {
+#     "MAIL_SERVER": ' smtp.office365.com',
+#     "MAIL_PORT": 587,
+#     "MAIL_USE_TLS": False,
+#     "MAIL_USE_SSL": True,
+#     "MAIL_USERNAME": os.environ['EMAIL_USER'],
+#     "MAIL_PASSWORD": os.environ['EMAIL_PASSWORD']
+# }
 
 
 def strip_tags(string, allowed_tags=''):
