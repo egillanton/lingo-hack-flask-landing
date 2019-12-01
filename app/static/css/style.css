@@ -4407,6 +4407,10 @@ input[type="button"].btn-block {
   margin-left: -0.625rem;
 }
 
+.text-wrap {
+  white-space: normal !important;
+}
+
 .card-img-overlay {
   position: absolute;
   top: 0;
@@ -9849,3 +9853,5 @@ form .row:first-child .floating-label-form-group {
 .copyright {
   background-color: #1a252f;
 }
+
+
