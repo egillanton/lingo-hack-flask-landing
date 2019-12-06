@@ -73,8 +73,9 @@ $(venv) flask run
 
 ### 2.6 Set Enviroment Variables
 ```bash
-export EMAIL_USER="<YOUR GMAIL>"
-export EMAIL_PASSWORD="<Your GMAIL Password>"
+export SENDGRID_USERNAME=<Email>
+export SENDGRID_PASSWORD=<Password>
+export SENDGRID_API_KEY=<API KEY>
 ```
 
 
