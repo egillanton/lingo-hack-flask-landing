@@ -1,8 +1,9 @@
 import os
 import re
-
+import json
 from flask import Flask, render_template, request, jsonify
-from flask_mail import Mail, Message
+
+import sendgrid
 
 # ======== Global Variables =========================================================== #
 # -------- For Contact Form ---------------------------------------------------------- #
@@ -48,20 +49,6 @@ def create_app(test_config=None):
     app = Flask(__name__, instance_relative_config=True)
     app.secret_key = os.urandom(12)  # Generic key for dev purposes only
 
-    # Mail Config
-    app.config.update(dict(
-        DEBUG=True,
-        MAIL_SERVER='smtp.gmail.com',
-        MAIL_PORT=587,
-        MAIL_USE_TLS=True,
-        MAIL_USE_SSL=False,
-        MAIL_USERNAME=os.environ['EMAIL_USER'],
-        MAIL_PASSWORD=os.environ['EMAIL_PASSWORD'],
-        MAIL_DEFAULT_SENDER='noreply@lingohack.is',
-        MAIL_MAX_EMAILS=5,
-    ))
-    mail = Mail(app)
-
     # ======== Routing ============================= #
     # -------- Home -------------------------------- #
     @app.route('/', methods=['GET'])
@@ -84,14 +71,34 @@ def create_app(test_config=None):
 
         body = BODY.format(name, email, phone, subject, message)
 
-        msg = Message(
-            sender=("lingohack.is Contact Form", email),
-            subject=subject,
-            body=body,
-            recipients=RECEPIENT_EMAILS,
-        )
+        sg = sendgrid.SendGridAPIClient(os.environ.get('SENDGRID_API_KEY'))
 
-        mail.send(msg)
+        for to_email in RECEPIENT_EMAILS:
+            sg = sendgrid.SendGridAPIClient(os.environ.get('SENDGRID_API_KEY'))
+
+            data = {
+                "personalizations": [
+                    {
+                        "to": [
+                            {
+                                "email": to_email
+                            }
+                        ],
+                        "subject": subject
+                    }
+                ],
+                "from": {
+                    "email": email,
+                    "name": name
+                },
+                "content": [
+                    {
+                        "type": "text/plain",
+                        "value": body
+                    }
+                ]
+            }
+            response = sg.client.mail.send.post(request_body=data)
 
         return jsonify(
             message="Email was successfully sent",
