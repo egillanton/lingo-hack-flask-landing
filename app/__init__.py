@@ -1,25 +1,22 @@
 import os
-
-from flask import Flask, render_template, request
-from flask_mail import Mail, Message
 import re
 
+from flask import Flask, render_template, request, jsonify
+from flask_mail import Mail, Message
 
-SUBJECT = "Lingó Hack 2020 Website Form: {}"
-RECEPIENT_EMAILS = ["egilla14@ru.is", "egillanton@live.com"]
-BODY = "You have received a new message from your website contact form.\n\nHere are the details:\n\nName: {}\n\nEmail: {}\n\nPhone: {}\n\nMessage:\n{}"
-HEADER = "From: noreply@ru.is\nReply-To: {}"
+# ======== Global Variables =========================================================== #
+# -------- For Contact Form ---------------------------------------------------------- #
+RECEPIENT_EMAILS = ["egillanton@gmail.com",
+                    # "davidemollberg@gmail.com",
+                    # "eyglombjorns@gmail.com",
+                    # "gabrielajona@gmail.com",
+                    # "stefanornsnae@gmail.com",
+                    ]
 
-# mail_settings = {
-#     "MAIL_SERVER": ' smtp.office365.com',
-#     "MAIL_PORT": 587,
-#     "MAIL_USE_TLS": False,
-#     "MAIL_USE_SSL": True,
-#     "MAIL_USERNAME": os.environ['EMAIL_USER'],
-#     "MAIL_PASSWORD": os.environ['EMAIL_PASSWORD']
-# }
+BODY = "You have received a new message from your lingohack.is contact form.\n\nHere are the details:\n\nName: {}\n\nEmail: {}\n\nPhone: {}\n\nSubject: {}\n\nMessage:\n{}"
 
 
+# ======== Strip HTML Tags from String =================================================#
 def strip_tags(string, allowed_tags=''):
     if allowed_tags != '':
         # Get a list of all allowed tag names.
@@ -45,10 +42,24 @@ def strip_tags(string, allowed_tags=''):
     return string
 
 
+# ======== CREATE APP  ================================================================#
 def create_app(test_config=None):
     """create and configure the app"""
     app = Flask(__name__, instance_relative_config=True)
     app.secret_key = os.urandom(12)  # Generic key for dev purposes only
+
+    # Mail Config
+    app.config.update(dict(
+        DEBUG=True,
+        MAIL_SERVER='smtp.gmail.com',
+        MAIL_PORT=587,
+        MAIL_USE_TLS=True,
+        MAIL_USE_SSL=False,
+        MAIL_USERNAME=os.environ['EMAIL_USER'],
+        MAIL_PASSWORD=os.environ['EMAIL_PASSWORD'],
+        MAIL_DEFAULT_SENDER='noreply@lingohack.is',
+        MAIL_MAX_EMAILS=5,
+    ))
     mail = Mail(app)
 
     # ======== Routing ============================= #
@@ -65,21 +76,25 @@ def create_app(test_config=None):
     # -------- EMAIL -------------------------------- #
     @app.route('/email', methods=['POST'])
     def email():
-        try:
-            name = strip_tags(request.json['name'])
-            email = strip_tags(request.json['email'])
-            phone = strip_tags(request.json['phone'])
-            message = strip_tags(request.json['message'])
+        name = strip_tags(request.json['name'])
+        email = strip_tags(request.json['email'])
+        phone = strip_tags(request.json['phone'])
+        subject = strip_tags(request.json['subject'])
+        message = strip_tags(request.json['message'])
 
-            body = BODY.format(name, email, phone, message)
-            sender = HEADER.format(email)
+        body = BODY.format(name, email, phone, subject, message)
 
-            msg = Message(body,
-                          sender=sender,
-                          recipients=RECEPIENT_EMAILS)
+        msg = Message(
+            sender=("lingohack.is Contact Form", email),
+            subject=subject,
+            body=body,
+            recipients=RECEPIENT_EMAILS,
+        )
 
-            mail.send(msg)
-        except:
-            pass
+        mail.send(msg)
+
+        return jsonify(
+            message="Email was successfully sent",
+        )
 
     return app

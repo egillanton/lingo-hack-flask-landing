@@ -71,6 +71,13 @@ $(venv) pip3 install -r requirements.txt
 $(venv) flask run
 ```
 
+### 2.6 Set Enviroment Variables
+```bash
+export EMAIL_USER="<YOUR GMAIL>"
+export EMAIL_PASSWORD="<Your GMAIL Password>"
+```
+
+
 You’ll see output similar to this:
 
 ```bash
