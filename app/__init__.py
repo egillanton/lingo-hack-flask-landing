@@ -50,7 +50,6 @@ def create_app(test_config=None):
     app.secret_key = os.urandom(12)  # Generic key for dev purposes only
 
     cwd = os.getcwd()
-    print(f"cdw:{cwd}")
     app.config["PKI_VALIDATION"] = f"{cwd}/app/static/.well-known/pki-validation/"
 
     # ======== Routing ============================= #
