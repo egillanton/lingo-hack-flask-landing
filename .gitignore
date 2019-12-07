@@ -1,6 +1,8 @@
 # Virtualenv
 venv/
 env/
+server.crt
+server.key
 
 .vscode/
 
