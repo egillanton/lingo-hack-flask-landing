@@ -7,14 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Language Technology Hackathon">
     <meta name="author" content="Reykjavik University">
-
     <!-- Facebook Metatags -->
-    <meta property="og:url" content="https://www.lingohack.is" />
-    <meta property="fb:app_id" content="492272211379112" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Nýsköpunarkeppni í máltækni!" />
-    <meta property="og:description" content="Látum tölvur skilja íslensku!" />
-    <meta property="og:image" content="{{ url_for('static', filename='img/screenshot.png') }}" />
+    {% block facebook_meta %}
+    {% endblock %}
 
     <!-- Custom Fonts -->
     <link href="{{ url_for('static', filename='css/vendor/fontawesome-free/css/all.min.css') }} " rel="stylesheet"

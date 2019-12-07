@@ -119,7 +119,7 @@ def create_app(test_config=None):
         except FileNotFoundError:
             abort(404)
 
-    @app.route('/static/img/<path:filename>')
+    @app.route('/img/<path:filename>')
     def images(filename):
         safe_path = safe_join(app.config["IMG_CLIENT"], filename)
 

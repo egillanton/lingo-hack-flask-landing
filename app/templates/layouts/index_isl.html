@@ -4,6 +4,16 @@
 {{ super() }}
 {% endblock %}
 
+{% block facebook_meta %}
+<meta property="og:url" content="https://www.lingohack.is/isl" />
+<meta property="fb:app_id" content="492272211379112" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Nýsköpunarkeppni í máltækni!" />
+<meta property="og:description" content="Látum tölvur skilja íslensku!" />
+<meta property="og:image" content="https://www.lingohack.is/img/screenshot.png" />
+{% endblock %}
+
+
 {% block content %}
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
