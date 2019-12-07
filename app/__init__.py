@@ -51,6 +51,7 @@ def create_app(test_config=None):
 
     cwd = os.getcwd()
     app.config["PKI_VALIDATION"] = f"{cwd}/app/static/.well-known/pki-validation/"
+    app.config["IMG_CLIENT"] = f"{cwd}/app/static/img/client/"
 
     # ======== Routing ============================= #
     # -------- Home -------------------------------- #
@@ -111,6 +112,16 @@ def create_app(test_config=None):
     @app.route('/.well-known/pki-validation/<path:filename>')
     def ssl_verification(filename):
         safe_path = safe_join(app.config["PKI_VALIDATION"], filename)
+
+        print(safe_path)
+        try:
+            return send_file(safe_path, as_attachment=True)
+        except FileNotFoundError:
+            abort(404)
+
+    @app.route('/static/img/<path:filename>')
+    def images(filename):
+        safe_path = safe_join(app.config["IMG_CLIENT"], filename)
 
         print(safe_path)
         try:
