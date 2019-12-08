@@ -54,6 +54,7 @@ def create_app(test_config=None):
     app.config["IMG_CLIENT"] = f"{cwd}/app/static/img/client/"
 
     # ======== Rount to HTTPS instead of HTTP ============================= #
+    # -------- Comment Out in Dev -------------------------------- #
     @app.before_request
     def before_request():
         if not request.is_secure and app.env != "development":
