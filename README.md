@@ -2,10 +2,10 @@
 Lingó Hack 2020 Landing Page
 </h1>
 
-<img src="https://user-images.githubusercontent.com/9976294/69917790-cc49e700-1461-11ea-811f-22172aa65bc6.png" alt="Screenshot" align="center"/>
+<img src="https://user-images.githubusercontent.com/9976294/70397301-02124100-1a09-11ea-9f22-4b16c0e7abd6.png" alt="Screenshot" align="center"/>
 
 <h2 align="center">
-<a href="https://lingo-hack-2020.herokuapp.com/">> Website <</a>
+<a href="https://www.lingohack.is">www.lingohack.is</a>
 </h2>
 
 ## Table of Contents
@@ -73,9 +73,11 @@ $(venv) flask run
 
 ### 2.6 Set Enviroment Variables
 ```bash
-export SENDGRID_USERNAME=<Email>
-export SENDGRID_PASSWORD=<Password>
-export SENDGRID_API_KEY=<API KEY>
+
+
+export SENDGRID_USERNAME=$(heroku config:get SENDGRID_USERNAME)
+export SENDGRID_PASSWORD=$(heroku config:get SENDGRID_PASSWORD)
+export SENDGRID_API_KEY=$(heroku config:get SENDGRID_API_KEY)
 ```
 
 
