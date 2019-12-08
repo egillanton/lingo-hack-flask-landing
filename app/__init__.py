@@ -1,7 +1,7 @@
 import os
 import re
 import json
-from flask import Flask, render_template, request, jsonify, send_file, send_from_directory, safe_join, abort
+from flask import Flask, render_template, request, jsonify, send_file, send_from_directory, safe_join, abort, redirect
 
 import sendgrid
 
@@ -52,6 +52,14 @@ def create_app(test_config=None):
     cwd = os.getcwd()
     app.config["PKI_VALIDATION"] = f"{cwd}/app/static/.well-known/pki-validation/"
     app.config["IMG_CLIENT"] = f"{cwd}/app/static/img/client/"
+
+    # ======== Rount to HTTPS instead of HTTP ============================= #
+    @app.before_request
+    def before_request():
+        if not request.is_secure and app.env != "development":
+            url = request.url.replace("http://", "https://", 1)
+            code = 301
+            return redirect(url, code=code)
 
     # ======== Routing ============================= #
     # -------- Home -------------------------------- #
