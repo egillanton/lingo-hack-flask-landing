@@ -116,15 +116,16 @@
 
       <!-- Challange Item 1 -->
       <!-- <div class="col-md-6 col-lg-4">
+        <div class="portfolio-item mx-auto">
           <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
-            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-              <div class="portfolio-item-caption-content text-center text-white">
-                <i class="fas fa-plus fa-3x"></i>
-              </div>
+          <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+            <div class="portfolio-item-caption-content text-center text-white">
+              <i class="fas fa-plus fa-3x"></i>
             </div>
-            <img class="img-fluid" src="img/portfolio/cabin.png" alt="">
           </div>
-        </div> -->
+          <img class="img-fluid" src="{{ url_for('static', filename ='img/Reykjavik_University_Logo.svg') }}" alt="">
+        </div>
+      </div> -->
 
       <!-- Challange Item 2 -->
       <!-- <div class="col-md-6 col-lg-4">
@@ -208,27 +209,45 @@
       <div class="divider-custom-line"></div>
     </div>
 
-    <h4 class="text-center text-uppercase text-white">List will be published later.</h4>
-
-
-    <!-- About Section Content -->
+    <!-- Sponsers Section -->
     <div class="row">
-      <!-- Portfolio Item 1 -->
-      <!-- <div class="col-md-6 col-lg-4">
-          <img class="img-fluid" src="img/portfolio/cabin.png" alt="">
-        </div>
-        <div class="col-md-6 col-lg-4">
-          <img class="img-fluid" src="img/portfolio/cabin.png" alt="">
-        </div>
-        <div class="col-md-6 col-lg-4">
-          <img class="img-fluid" src="img/portfolio/cabin.png" alt="">
-        </div> -->
+      <!-- RU -->
+      <div class="col-md-6 col-lg-4 py-3 text-center">
+        <a href="https://ru.is/" target="_blank" rel="noopener noreferrer">
+          <img class="img-fluid" src="{{ url_for('static', filename ='img/hr_logo_white_letters.svg') }}" alt=""
+            style="height: 200px;">
+        </a>
+      </div>
+      <!-- LVL -->
+      <div class="col-md-6 col-lg-4 py-3 text-center">
+        <a href="https://lvl.ru.is/" target="_blank" rel="noopener noreferrer">
+          <img class="img-fluid" src="{{ url_for('static', filename ='img/lvl_logo.png') }}" alt=""
+            style="height: 200px;">
+        </a>
+      </div>
+      <!-- ICELANDIC STARTUPS -->
+      <div class="col-md-6 col-lg-4 py-3 text-center">
+        <a href="http://www.icelandicstartups.com/" target="_blank" rel="noopener noreferrer">
+          <img class="img-fluid" src="{{ url_for('static', filename ='img/icelandic_startups.png') }}" alt=""
+            style="height: 200px; width: auto;">
+        </a>
+      </div>
+      <!-- RED BULL -->
+      <div class="col-md-6 col-lg-4 py-3 text-center">
+        <img class="img-fluid" src="{{ url_for('static', filename ='img/Red-Bull-logo.png') }}" alt=""
+          style="height: 200px; width: auto;">
+      </div>
+      <!-- MARGT SMATT -->
+      <div class="col-md-6 col-lg-4 py-3 text-center">
+        <a href="http://margtsmatt.is/" target="_blank" rel="noopener noreferrer">
+          <img class="img-fluid" src="{{ url_for('static', filename ='img/margt_smatt_logo.svg') }}" alt=""
+            style="height: 200px; width: auto;">
+        </a>
+      </div>
     </div>
-
-
+    <h4 class="mt-3 text-center text-uppercase text-white ">More to come...</h4>
   </div>
 </section>
-
 <!-- Schedule Section -->
 <section class="page-section text-white mb-0" id="schedule">
   <div class="container">
@@ -532,7 +551,8 @@
         </div>
         <div id="collapse7" class="collapse" aria-labelledby="heading7" data-parent="#accordion">
           <div class="card-body">
-            Take the public bus, route 8 from BSÍ it will drive dirrectly to Reykjavik University. More information at
+            Take the public bus, route 8 from BSÍ it will drive dirrectly to Reykjavik University. More information
+            at
             <a href="https://www.straeto.is">straeto.is</a>.
           </div>
         </div>
@@ -578,7 +598,8 @@
         </div>
         <div id="collapse10" class="collapse" aria-labelledby="heading10" data-parent="#accordion">
           <div class="card-body">
-            No - because we want our event to be fair, everyone has the same starting line, so all projects have to be
+            No - because we want our event to be fair, everyone has the same starting line, so all projects have to
+            be
             created from scratch during the 24 hours of the hackathon.
           </div>
         </div>
@@ -595,7 +616,8 @@
         <div id="collapse11" class="collapse" aria-labelledby="heading11" data-parent="#accordion">
           <div class="card-body">
             Yes! Volunteers are the driving force behind the event; we couldn't run it without them. A bit closer to
-            the day we'll send out a call for volunteers, but if you're especially eager you can contact the committee
+            the day we'll send out a call for volunteers, but if you're especially eager you can contact the
+            committee
             with a short application in the <a href="#contact">Contact Us</a> form below and we'll mark you down.
           </div>
         </div>
@@ -750,7 +772,7 @@
 <!-- Portfolio Modals -->
 
 <!-- Portfolio Modal 1 -->
-<!-- <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog"
+<div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog"
   aria-labelledby="portfolioModal1Label" aria-hidden="true">
   <div class="modal-dialog modal-xl" role="document">
     <div class="modal-content">
@@ -762,33 +784,32 @@
       <div class="modal-body text-center">
         <div class="container">
           <div class="row justify-content-center">
-            <div class="col-lg-8"> -->
-<!-- Portfolio Modal - Title -->
-<!-- <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Log Cabin</h2> -->
-<!-- Icon Divider -->
-<!-- <div class="divider-custom">
+            <div class="col-lg-8">
+              <!-- Portfolio Modal - Title -->
+              <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Fyrirtæki ehf.</h2>
+              <!-- Icon Divider -->
+              <div class="divider-custom">
                 <div class="divider-custom-line"></div>
                 <div class="divider-custom-icon">
                   <i class="fas fa-star"></i>
                 </div>
                 <div class="divider-custom-line"></div>
-              </div> -->
-<!-- Portfolio Modal - Image -->
-<!-- <img class="img-fluid rounded mb-5" src="img/portfolio/cabin.png" alt=""> -->
-<!-- Portfolio Modal - Text -->
-<!-- <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam
-                nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae?
-                Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+              </div>
+              <!-- Portfolio Modal - Image -->
+              <img class="img-fluid rounded mb-5" src="https://www.lingohack.is/img/share_image.png" alt="">
+              <!-- Portfolio Modal - Text -->
+              <p class="mb-5">Smelltu hér til þess að fá fyrsta mánuðinn fríann með því að skrá þig sem nýr notandi.
+              </p>
               <button class="btn btn-primary" href="#" data-dismiss="modal">
                 <i class="fas fa-times fa-fw"></i>
-                Close Window
+                Smelltu Hér
               </button>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div> -->
+  </div>
 </div>
 {% endblock %}
 
